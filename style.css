@@ -1,0 +1,227 @@
+:root {
+    --primary-color: #192746;
+    --accent-color: #F2B61A;
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
+    --bg-light: #ffffff;
+    --bg-section: #f9fafb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.5;
+    color: var(--text-dark);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px; /* Otimizado para mobile/telas estreitas */
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Hero Section */
+header {
+    padding: 40px 0 30px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 1.85rem;
+    color: var(--primary-color);
+    margin-bottom: 16px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+}
+
+.cta-button {
+    display: block;
+    width: 100%;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 20px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    box-shadow: 0 8px 20px rgba(242, 182, 26, 0.3);
+    transition: transform 0.2s ease;
+    border: none;
+    text-align: center;
+}
+
+.cta-button:active {
+    transform: scale(0.98);
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 800;
+}
+
+/* Pain Points */
+.pain-points {
+    background-color: var(--bg-section);
+    padding: 60px 0;
+}
+
+.pain-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.pain-item {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+}
+
+.pain-item span {
+    background: #fee2e2;
+    color: #ef4444;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-weight: bold;
+}
+
+.pain-item p {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Bio Section */
+.bio {
+    padding: 60px 0;
+}
+
+.bio-text h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.bio-text p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    color: #444;
+}
+
+/* Comparison Section */
+.comparison {
+    padding: 60px 0;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.comparison h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.comp-card {
+    background: white;
+    border-radius: 20px;
+    padding: 24px;
+    color: var(--text-dark);
+}
+
+.comp-row {
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.comp-row:last-child { border-bottom: none; }
+
+.comp-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.comp-value {
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comp-value.positive { color: #059669; }
+.comp-value.negative { color: #dc2626; }
+
+/* FAQ */
+.faq {
+    padding: 60px 0;
+}
+
+.faq-item {
+    margin-bottom: 16px;
+    background: var(--bg-section);
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.faq-item h3 {
+    font-size: 1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.faq-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Footer */
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 60px 24px 40px;
+    text-align: center;
+}
+
+.footer-contact {
+    margin-bottom: 24px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.footer-contact p { margin: 4px 0; }
+
+.copyright {
+    font-size: 0.75rem;
+    opacity: 0.5;
+    margin-top: 40px;
+}
