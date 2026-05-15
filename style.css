@@ -25,7 +25,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 450px;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -46,7 +46,6 @@ body {
     font-size: 0.9rem;
     color: #6b7280;
     line-height: 1.5;
-    padding: 0 10px;
 }
 
 .links-gap {
@@ -64,24 +63,18 @@ body {
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
-    border: 2px solid transparent;
 }
 
 .link-item:active {
     transform: scale(0.97);
-    background-color: #f9fafb;
 }
 
 .link-item.featured {
     background-color: var(--primary-color);
     color: var(--white);
-    box-shadow: 0 10px 15px -3px rgba(25, 39, 70, 0.3);
-}
-
-.link-item.featured:active {
-    background-color: #111d35;
+    box-shadow: 0 10px 15px rgba(25, 39, 70, 0.2);
 }
 
 footer {
