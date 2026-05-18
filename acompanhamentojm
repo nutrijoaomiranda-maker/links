@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta name="description" content="Acompanhamento Nutricional com João Miranda. Sua alimentação se encaixa na sua rotina, não o contrário." />
+  <meta name="theme-color" content="#f59e0b" />
+  <title>Acompanhamento | João Miranda Nutricionista</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --amber:       #f59e0b;
+      --amber-dark:  #d97706;
+      --amber-light: #fcd34d;
+      --amber-glow:  rgba(245,158,11,0.15);
+      --navy:        #0f1f3d;
+      --navy-mid:    #162444;
+      --dark:        #080e1a;
+      --dark2:       #0d1628;
+      --card:        rgba(255,255,255,0.04);
+      --card-border: rgba(255,255,255,0.08);
+      --text:        #f0eee8;
+      --muted:       rgba(240,238,232,0.60);
+      --green:       #22c55e;
+      --red:         #ef4444;
+      --radius-lg:   20px;
+      --radius-md:   14px;
+      --radius-sm:   10px;
+      --max-w:       720px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--dark);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 60%);
+      padding: 72px 24px 80px;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 90% 60% at 50% 0%, rgba(245,158,11,0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 90% 100%, rgba(245,158,11,0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      padding: 5px 16px;
+      border: 1px solid var(--amber);
+      border-radius: 100px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 22px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.1s ease forwards;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5.5vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      max-width: 640px;
+      margin: 0 auto 20px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.2s ease forwards;
+    }
+    .hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--amber), var(--amber-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero-sub {
+      font-size: clamp(0.97rem, 2.5vw, 1.1rem);
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      opacity: 0;
+      animation: fadeUp 0.7s 0.3s ease forwards;
+    }
+    .hero-cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.7s 0.4s ease forwards;
+    }
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 17px 36px;
+      background: linear-gradient(135deg, var(--amber), var(--amber-dark));
+      color: #1a0e00;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 10px 32px rgba(245,158,11,0.4), 0 2px 8px rgba(0,0,0,0.3);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(245,158,11,0.5); }
+    .btn-cta:active { transform: translateY(0); }
+    .btn-cta .dots { font-size: 1.1rem; letter-spacing: -2px; }
+
+    /* ─── SECTION BASE ─────────────────────────── */
+    section { padding: 72px 24px; }
+    .container { max-width: var(--max-w); margin: 0 auto; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .divider-amber {
+      width: 48px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--amber), transparent);
+      border-radius: 2px;
+      margin: 20px 0 32px;
+    }
+
+    /* ─── DOR ──────────────────────────────────── */
+    .section-dor {
+      background: #fff;
+      color: var(--navy);
+    }
+    .section-dor .section-tag { color: var(--amber-dark); }
+    .section-dor .section-title { color: var(--navy); }
+    .section-dor .section-sub { color: #3a4a6b; }
+    .section-dor .divider-amber { background: linear-gradient(90deg, var(--amber-dark), transparent); }
+
+    .pain-intro {
+      font-size: 1rem;
+      color: #3a4a6b;
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    @media (max-width: 520px) { .pain-grid { grid-template-columns: 1fr; } }
+
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      background: #f8f6f1;
+      border-radius: var(--radius-md);
+      border-left: 3px solid var(--amber);
+    }
+    .pain-item .bullet {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .pain-item .bullet::after {
+      content: '?';
+      font-size: 0.65rem;
+      font-weight: 800;
+      color: #1a0e00;
+    }
+    .pain-item span { font-size: 0.9rem; font-weight: 500; color: var(--navy); line-height: 1.4; }
+
+    /* ─── QUEM É ────────────────────────────────── */
+    .section-quem {
+      background: linear-gradient(160deg, var(--navy-mid) 0%, var(--dark2) 100%);
+    }
+    .quem-layout {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    @media (max-width: 560px) {
+      .quem-layout { grid-template-columns: 1fr; }
+      .quem-photo { margin: 0 auto; }
+    }
+    .quem-photo {
+      width: 200px;
+      height: 240px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(160deg, var(--navy), var(--dark));
+      border: 2px solid rgba(245,158,11,0.3);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5), 0 0 0 1px rgba(245,158,11,0.15);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--amber);
+    }
+    .quem-text p {
+      font-size: 0.97rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .quem-text p:last-child { margin-bottom: 0; }
+    .quem-text strong { color: var(--amber); font-weight: 700; }
+
+    /* ─── COMPARAÇÃO ────────────────────────────── */
+    .section-comp {
+      background: #fff;
+      color: var(--navy);
+    }
+    .comp-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 36px;
+    }
+    @media (max-width: 560px) { .comp-grid { grid-template-columns: 1fr; } }
+
+    .comp-card {
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+    .comp-card.bad {
+      background: #f9f9f9;
+      border: 1.5px solid #e8e8e8;
+    }
+    .comp-card.good {
+      background: linear-gradient(160deg, var(--navy) 0%, #1a2f5a 100%);
+      border: 1.5px solid rgba(245,158,11,0.4);
+      box-shadow: 0 16px 48px rgba(15,31,61,0.18);
+    }
+    .comp-header {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      padding: 8px 18px;
+      border-radius: 100px;
+      display: inline-block;
+      margin-bottom: 22px;
+    }
+    .comp-header.bad { background: var(--navy); color: #fff; }
+    .comp-header.good { background: linear-gradient(135deg, var(--amber), var(--amber-dark)); color: #1a0e00; }
+
+    .comp-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .comp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+    .comp-card.bad .comp-list li { color: #4a5a7a; }
+    .comp-card.good .comp-list li { color: rgba(240,238,232,0.85); }
+    .comp-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.75rem;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+    .comp-icon.x { background: #fee2e2; color: var(--red); }
+    .comp-icon.ok { background: #dcfce7; color: var(--green); }
+
+    .comp-cta-wrap {
+      text-align: center;
+      margin-top: 40px;
+    }
+    .btn-cta-light {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 17px 36px;
+      background: linear-gradient(135deg, var(--amber), var(--amber-dark));
+      color: #1a0e00;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-radius: 100px;
+      text-decoration: none;
+      box-shadow: 0 10px 32px rgba(245,158,11,0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+    .btn-cta-light:hover { transform: translateY(-3px); box-shadow: 0 18px 42px rgba(245,158,11,0.5); }
+
+    /* ─── DEPOIMENTOS ───────────────────────────── */
+    .section-dep {
+      background: linear-gradient(160deg, var(--dark2) 0%, var(--dark) 100%);
+    }
+    .dep-sub {
+      font-size: 0.97rem;
+      color: var(--muted);
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .dep-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    @media (max-width: 520px) { .dep-grid { grid-template-columns: 1fr; } }
+
+    .dep-card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-md);
+      padding: 20px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .dep-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--amber), transparent);
+    }
+    .dep-bubble {
+      background: #1e1e1e;
+      border-radius: 12px 12px 12px 4px;
+      padding: 12px 14px;
+      font-size: 0.87rem;
+      line-height: 1.55;
+      color: #e0ddd8;
+      margin-bottom: 8px;
+    }
+    .dep-bubble + .dep-bubble { border-radius: 12px; margin-bottom: 4px; }
+    .dep-time { font-size: 0.7rem; color: rgba(255,255,255,0.3); text-align: right; margin-top: 4px; }
+    .dep-name {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--amber);
+      margin-top: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    /* ─── FAQ ───────────────────────────────────── */
+    .section-faq { background: #fff; color: var(--navy); }
+    .section-faq .section-tag { color: var(--amber-dark); }
+    .section-faq .section-title { color: var(--navy); }
+    .section-faq .divider-amber { background: linear-gradient(90deg, var(--amber-dark), transparent); }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    @media (max-width: 560px) { .faq-grid { grid-template-columns: 1fr; } }
+
+    .faq-item {
+      border-left: 3px solid var(--amber);
+      padding-left: 18px;
+    }
+    .faq-q {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .faq-a {
+      font-size: 0.9rem;
+      color: #3a4a6b;
+      line-height: 1.7;
+    }
+
+    /* ─── FINAL CTA ─────────────────────────────── */
+    .section-final {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--dark) 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .section-final::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(245,158,11,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .section-final .section-title { color: var(--text); }
+    .section-final .section-sub { color: var(--muted); max-width: 480px; margin: 0 auto 36px; }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .contact-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 100px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.18s, color 0.18s;
+    }
+    .contact-chip:hover { border-color: var(--amber); color: var(--amber); }
+    .contact-chip svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ─── FOOTER ────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding: 28px 24px;
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(240,238,232,0.28);
+      line-height: 1.8;
+    }
+
+    /* ─── ANIMATIONS ────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══════════════════════════════════════ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Acompanhamento Nutricional</span>
+      <h1>Sua alimentação se encaixa <em>na sua rotina</em>,<br>não o contrário.</h1>
+      <p class="hero-sub">A solução definitiva para adultos com rotina corrida que querem comer bem, treinar e ter energia para a família — de forma prática e viável.</p>
+      <div class="hero-cta-wrap">
+        <a href="https://wa.me/5521995289859" target="_blank" rel="noopener" class="btn-cta">
+          Quero um plano que caiba na minha rotina <span class="dots">›››</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DOR ════════════════════════════════════════ -->
+  <section class="section-dor">
+    <div class="container reveal">
+      <span class="section-tag">Identificação</span>
+      <h2 class="section-title">Cansado(a) de dietas que não funcionam?<br>Eu entendo sua jornada.</h2>
+      <div class="divider-amber"></div>
+      <p class="pain-intro">
+        Antes de tudo, quero que você saiba: sua frustração é válida. Por anos, vi pessoas presas num ciclo viciante de dietas que só geram mais culpa e o mesmo resultado: insatisfação. Eu mesmo já estive nesse lugar.
+      </p>
+      <div class="pain-grid">
+        <div class="pain-item"><span class="bullet"></span><span>Sente que a rotina atropela a sua alimentação?</span></div>
+        <div class="pain-item"><span class="bullet"></span><span>Cansado de improvisar o que come entre reuniões?</span></div>
+        <div class="pain-item"><span class="bullet"></span><span>Falta de energia para o dia a dia e os treinos?</span></div>
+        <div class="pain-item"><span class="bullet"></span><span>Culpa toda vez que come fora do planejado?</span></div>
+        <div class="pain-item"><span class="bullet"></span><span>Resultados que aparecem e somem (efeito sanfona)?</span></div>
+        <div class="pain-item"><span class="bullet"></span><span>Quer treinar e ter energia para a família?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ QUEM É ══════════════════════════════════════ -->
+  <section class="section-quem">
+    <div class="container reveal">
+      <span class="section-tag">Sobre mim</span>
+      <h2 class="section-title">Quem é João Miranda?<br>Minha jornada te guia.</h2>
+      <div class="divider-amber"></div>
+      <div class="quem-layout">
+        <div class="quem-photo">JM</div>
+        <div class="quem-text">
+          <p>Por muito tempo, eu também estive preso a um ciclo de <strong>desequilíbrio e frustração</strong> com minha alimentação, peso e energia. Conheço de perto o cansaço e a baixa autoestima que você pode estar sentindo agora.</p>
+          <p>Minha própria <strong>transformação</strong> — de uma vida desregrada para um estilo de vida leve e consciente — foi a faísca que me fez buscar a nutrição como propósito.</p>
+          <p>Essa experiência me impulsionou a ser o <strong>aliado</strong> que eu gostaria de ter tido. Minha missão é te guiar para que você conquiste a <strong>liberdade alimentar</strong> e uma vida plena, sem culpas ou sacrifícios extremos.</p>
+          <p>Eu não te entrego apenas um plano; eu te dou as <strong>ferramentas</strong>, o suporte e o conhecimento para resultados que duram para sempre. <strong>Eu amo o que faço e estou aqui para você.</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COMPARAÇÃO ══════════════════════════════════ -->
+  <section class="section-comp">
+    <div class="container reveal">
+      <span class="section-tag">Por que me escolher</span>
+      <h2 class="section-title">O que é diferente no meu acompanhamento?</h2>
+      <div class="divider-amber"></div>
+      <div class="comp-grid">
+        <div class="comp-card bad">
+          <span class="comp-header bad">Consultoria Padrão</span>
+          <ul class="comp-list">
+            <li><span class="comp-icon x">✕</span><span>Plano alimentar genérico, igual para todos.</span></li>
+            <li><span class="comp-icon x">✕</span><span>Pouco ou nenhum suporte entre as consultas.</span></li>
+            <li><span class="comp-icon x">✕</span><span>Resultados rápidos, mas sem sustentabilidade.</span></li>
+            <li><span class="comp-icon x">✕</span><span>Não aborda a relação emocional com a comida.</span></li>
+            <li><span class="comp-icon x">✕</span><span>Você segue a dieta, mas não entende o porquê.</span></li>
+          </ul>
+        </div>
+        <div class="comp-card good">
+          <span class="comp-header good">Acompanhamento João Miranda</span>
+          <ul class="comp-list">
+            <li><span class="comp-icon ok">✓</span><span>Plano moldado à sua agenda e realidade.</span></li>
+            <li><span class="comp-icon ok">✓</span><span>Suporte em tempo real, sempre que precisar.</span></li>
+            <li><span class="comp-icon ok">✓</span><span>Foco em viabilidade de longo prazo.</span></li>
+            <li><span class="comp-icon ok">✓</span><span>Abordagem humana e empática com a comida.</span></li>
+            <li><span class="comp-icon ok">✓</span><span>Conhecimento e autonomia que ficam para sempre.</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="comp-cta-wrap">
+        <a href="https://wa.me/5521995289859" target="_blank" rel="noopener" class="btn-cta-light">
+          Quero um plano que caiba na minha rotina <span>›››</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DEPOIMENTOS ════════════════════════════════ -->
+  <section class="section-dep">
+    <div class="container reveal">
+      <span class="section-tag">Resultados reais</span>
+      <h2 class="section-title">Quem já transformou a vida comigo:</h2>
+      <div class="divider-amber"></div>
+      <p class="dep-sub">Veja o que meus pacientes têm a dizer sobre a jornada de liberdade e bem-estar que construíram com meu acompanhamento:</p>
+      <div class="dep-grid">
+
+        <div class="dep-card">
+          <div class="dep-bubble">"O diferente de vc p mim de outros nutris é a paz q vc transmite ❤️"</div>
+          <div class="dep-bubble">"Vc explica, dá a direção e não é nada que faça sofrer. Tem interesse nas pessoas. Isso muda tudo 🙏"</div>
+          <div class="dep-time">10:19</div>
+          <p class="dep-name">Paciente — WhatsApp</p>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-bubble">"oi querido! tudo bem? perdi 2kg! vou comemorar comendo lamen kkkk"</div>
+          <div class="dep-time">13:11</div>
+          <p class="dep-name">Júlia — WhatsApp</p>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-bubble">"Funcionou aqui 😊 Li o material e tenho um comentário: Você entendeu exatamente o que estou buscando ❤️ Tô animado"</div>
+          <div class="dep-time">10:55</div>
+          <p class="dep-name">Lucas Werner — WhatsApp</p>
+        </div>
+
+        <div class="dep-card">
+          <div class="dep-bubble">"Queria dizer que cheguei no trabalho presencial e ouvi: Nossa Larissa, vc tá muito magra!"</div>
+          <div class="dep-bubble">"Eu falo, mas voces nao me escutam... MAS ATA CONTECENDO! 😂"</div>
+          <div class="dep-time">09:20</div>
+          <p class="dep-name">Larissa — WhatsApp</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FAQ ════════════════════════════════════════ -->
+  <section class="section-faq">
+    <div class="container reveal">
+      <span class="section-tag">Suas dúvidas</span>
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <div class="divider-amber"></div>
+      <div class="faq-grid">
+
+        <div class="faq-item">
+          <p class="faq-q">"O acompanhamento online funciona para mim?"</p>
+          <p class="faq-a">Meu método é totalmente personalizado para se adaptar à sua rotina, não importa onde você esteja. A autonomia é o foco — você aprende a fazer funcionar no seu dia a dia.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">"Meu problema é com a ansiedade. Consigo resolver?"</p>
+          <p class="faq-a">Minha abordagem entende que a alimentação vai além do prato. Te guio para gerenciar as emoções e fazer escolhas conscientes, recuperando o controle sem culpa.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">"Eu já tentei de tudo. Por que com você seria diferente?"</p>
+          <p class="faq-a">Porque aqui não tem dieta pronta. Eu te dou o conhecimento e as ferramentas para construir uma relação saudável e duradoura com a comida — sem o efeito sanfona das soluções rápidas.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-q">"Será que vale o investimento?"</p>
+          <p class="faq-a">Pense assim: quanto tempo e dinheiro você já gastou em dietas que não duraram? O que ofereço é um resultado que fica — e o conhecimento que você carrega para o resto da vida.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FINAL CTA ══════════════════════════════════ -->
+  <section class="section-final">
+    <div class="container reveal">
+      <span class="section-tag">Próximo passo</span>
+      <h2 class="section-title">Pronto para mudar de vez?</h2>
+      <p class="section-sub">Entre em contato agora e dê o primeiro passo para uma relação leve e duradoura com a sua alimentação.</p>
+      <a href="https://wa.me/5521995289859" target="_blank" rel="noopener" class="btn-cta">
+        Agendar minha consulta no WhatsApp <span class="dots">›››</span>
+      </a>
+      <div class="contact-row">
+        <a class="contact-chip" href="https://instagram.com/nutrijoaomiranda" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          @nutrijoaomiranda
+        </a>
+        <a class="contact-chip" href="https://wa.me/5521995289859" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          (21) 99528-9859
+        </a>
+        <span class="contact-chip">CRN 22103660</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══════════════════════════════════════ -->
+  <footer>
+    <p>© 2026 João Miranda · Nutricionista · CRN 22103660</p>
+    <p>Desenvolvido com cuidado para sua saúde.</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
