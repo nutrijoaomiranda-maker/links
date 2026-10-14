@@ -31,6 +31,20 @@
     .btn-primary{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;max-width:360px;padding:17px 24px;background:var(--blue);color:var(--white);border:none;border-radius:var(--radius);font-family:'Montserrat',sans-serif;font-size:0.95rem;font-weight:700;text-decoration:none;cursor:pointer;box-shadow:0 8px 32px var(--blue-glow);transition:transform 0.18s ease,box-shadow 0.18s ease,background 0.18s;animation:fadeDown 0.6s 0.3s ease both;letter-spacing:0.01em;}
     .btn-primary:hover{background:#0052CC;transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,102,255,0.4);}
     .btn-primary:active{transform:translateY(0);}
+
+    /* Shark Start — botão especial */
+    .btn-shark-start{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;max-width:360px;margin-top:10px;padding:16px 20px;background:linear-gradient(135deg,#0A1628 0%,#0D1E38 100%);border:1.5px solid var(--blue);border-radius:var(--radius);color:var(--white);text-decoration:none;font-family:'Montserrat',sans-serif;cursor:pointer;animation:fadeDown 0.6s 0.35s ease both;position:relative;overflow:hidden;transition:transform 0.18s,box-shadow 0.18s,border-color 0.18s;}
+    .btn-shark-start::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,102,255,0.08) 0%,transparent 60%);pointer-events:none;}
+    .btn-shark-start:hover{transform:translateY(-2px);box-shadow:0 10px 36px rgba(0,102,255,0.35);border-color:#3388FF;}
+    .btn-shark-start:active{transform:translateY(0);}
+    .ss-left{display:flex;align-items:center;gap:12px;}
+    .ss-icon{width:42px;height:42px;border-radius:10px;background:rgba(0,102,255,0.15);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.3rem;}
+    .ss-text{display:flex;flex-direction:column;}
+    .ss-name{font-size:0.93rem;font-weight:700;line-height:1.2;letter-spacing:0.01em;}
+    .ss-sub{font-size:0.72rem;font-weight:500;color:var(--gray);margin-top:3px;}
+    .ss-arrow{opacity:0.4;font-size:1rem;flex-shrink:0;}
+    .pill-new{display:inline-block;padding:2px 8px;background:var(--blue);border-radius:100px;font-size:0.6rem;font-weight:800;color:var(--white);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:4px;}
+
     .links{margin-top:12px;display:flex;flex-direction:column;gap:10px;width:100%;max-width:360px;}
     .btn-secondary{display:flex;align-items:center;gap:14px;width:100%;padding:14px 18px;background:var(--card);border:1px solid var(--border);border-radius:var(--radius);color:var(--white);text-decoration:none;font-size:0.9rem;font-weight:600;transition:border-color 0.18s,transform 0.18s,background 0.18s;}
     .btn-secondary:hover{border-color:var(--blue);background:var(--blue-dim);transform:translateY(-1px);}
@@ -44,13 +58,13 @@
     .btn-secondary .sublabel{display:block;font-size:0.72rem;font-weight:500;color:var(--gray);margin-top:2px;}
     .btn-secondary .arrow{opacity:0.3;font-size:1rem;transition:opacity 0.18s,transform 0.18s;flex-shrink:0;}
     .btn-secondary:hover .arrow{opacity:0.8;transform:translateX(3px);}
-    .links > *:nth-child(1){animation:fadeDown 0.6s 0.38s ease both;}
-    .links > *:nth-child(2){animation:fadeDown 0.6s 0.46s ease both;}
-    .links > *:nth-child(3){animation:fadeDown 0.6s 0.54s ease both;}
-    .links > *:nth-child(4){animation:fadeDown 0.6s 0.62s ease both;}
+    .links > *:nth-child(1){animation:fadeDown 0.6s 0.44s ease both;}
+    .links > *:nth-child(2){animation:fadeDown 0.6s 0.52s ease both;}
+    .links > *:nth-child(3){animation:fadeDown 0.6s 0.60s ease both;}
+    .links > *:nth-child(4){animation:fadeDown 0.6s 0.68s ease both;}
     @keyframes fadeDown{from{opacity:0;transform:translateY(-12px);}to{opacity:1;transform:translateY(0);}}
-    .brand-tag{margin-top:48px;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.2);animation:fadeDown 0.6s 0.7s ease both;}
-    footer{margin-top:8px;text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.18);line-height:1.7;animation:fadeDown 0.6s 0.72s ease both;}
+    .brand-tag{margin-top:48px;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.2);animation:fadeDown 0.6s 0.76s ease both;}
+    footer{margin-top:8px;text-align:center;font-size:0.72rem;color:rgba(255,255,255,0.18);line-height:1.7;animation:fadeDown 0.6s 0.78s ease both;}
     footer span{display:block;}
   </style>
 </head>
@@ -71,6 +85,19 @@
 
   <a class="btn-primary" href="acompanhamento.html">
     Quero Organizar Minha Alimentação →
+  </a>
+
+  <!-- Shark Start -->
+  <a class="btn-shark-start" href="https://nutrijoaomiranda-maker.github.io/portal-formularios/venda-produto.html" target="_blank" rel="noopener noreferrer">
+    <div class="ss-left">
+      <div class="ss-icon">🦈</div>
+      <div class="ss-text">
+        <span class="pill-new">Novo</span>
+        <span class="ss-name">Shark Start</span>
+        <span class="ss-sub">Planejamento alimentar · sem consulta</span>
+      </div>
+    </div>
+    <span class="ss-arrow">→</span>
   </a>
 
   <div class="links">
